@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: house-prediction-chennai
+    env: python
+    runtime: python-3.10.13
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run src/app.py --server.port $PORT --server.address 0.0.0.0"
+    autoDeploy: true
